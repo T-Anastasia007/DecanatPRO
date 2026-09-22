@@ -60,7 +60,7 @@
             this.tableLayoutPanel1.Controls.Add(this.buttonCancel, 1, 11);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 13;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 4.601255F));
@@ -136,7 +136,7 @@
             this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxName.Location = new System.Drawing.Point(139, 234);
-            this.textBoxName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(398, 34);
             this.textBoxName.TabIndex = 4;
@@ -146,7 +146,7 @@
             this.textBoxSpec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxSpec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxSpec.Location = new System.Drawing.Point(139, 388);
-            this.textBoxSpec.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxSpec.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSpec.Name = "textBoxSpec";
             this.textBoxSpec.Size = new System.Drawing.Size(398, 34);
             this.textBoxSpec.TabIndex = 5;
@@ -156,7 +156,7 @@
             this.textBoxGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxGroup.Location = new System.Drawing.Point(139, 542);
-            this.textBoxGroup.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxGroup.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGroup.Name = "textBoxGroup";
             this.textBoxGroup.Size = new System.Drawing.Size(398, 34);
             this.textBoxGroup.TabIndex = 6;
@@ -191,10 +191,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(678, 844);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Rodchenko", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormAdd";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

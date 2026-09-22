@@ -16,5 +16,11 @@ namespace DecanatPRO
         {
             InitializeComponent();
         }
+
+        private void buttonExit_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+            this.Close();
+        }
     }
 }
