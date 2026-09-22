@@ -9,15 +9,11 @@ namespace DecanatPRO
 {
     public class Logic
     {
-        private int ID;
         public List<Student> students { get; set; } = new List<Student>();
 
         public void AddStudent(string name, string speciality, string group)
         {
-            Student newstud = new Student(name, speciality, group);
-            students.Add(newstud);
-            newstud.index = ID;
-            ID++;
+            students.Add(new Student(name, speciality, group));
         }
         public void DeleteStudent(int indexx)
         {
