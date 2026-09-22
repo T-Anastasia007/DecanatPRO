@@ -19,66 +19,50 @@ namespace DecanatPRO
         {
             students.RemoveAt(index);      
         }
-        public void ShowTable() 
+        public List<Student> ShowTable() 
         {
-            for (int i = 0; i < students.Count; i++)
-            {
-                Console.WriteLine($"{students[i].Name} | Специальность: {students[i].Speciality} Группа: {students[i].Group}");
-            }
+            //for (int i = 0; i < students.Count; i++)
+            //{
+            //    Console.WriteLine($"{students[i].Name} | Специальность: {students[i].Speciality} Группа: {students[i].Group}");
+            //}
+            return students;
         }
-        public void ShowGistogram()
+        public Dictionary<string, int> ShowGistogram()
         {
             var gistogram = students
-                .GroupBy(x => x.Speciality)
-                .Select(x => new
-                {
-                    Spec = x.Key,
-                    Count = x.Count()
-                });
-            foreach (var g in gistogram)
-            {
-                Console.Write($"{g.Spec}: ");
-                for (int i = 0;i < g.Count; i++)
-                {
-                    Console.Write("-");
-                }
-                Console.WriteLine("");
-            }
+                .GroupBy(s => s.Speciality)
+                .ToDictionary(k => k.Key, c => c.Count());
+            return gistogram;
         }
-        public bool CheckOnDurak(string proverim, CheckMode cheсkmode)
+        public string CheckOnDurak(string proverim, CheckMode checkmode)
         {
-            // proverim = proverim.Trim(); добавить в main, как и s = иван | char.ToUpper(s[0]) + s.Substring(1); s = Иван
-            if (proverim == null || proverim.Length > 50 || proverim.Length < 2 )
+            //proverim = proverim.Trim(); добавить в main, как и s = иван | char.ToUpper(s[0]) + s.Substring(1); s = Иван
+            if (proverim == null || proverim.Length > 50 || proverim.Length < 2)
             {
-                Console.WriteLine("Некорректная длина слова!");
-                return false;
+                return "Некорректная длина слова!";
             }
-            
-            switch (cheсkmode)
+            switch (checkmode)
             {
                 case CheckMode.Letters:
                     foreach (char a in proverim)
                     {
-                        if ((a < 'a' || a > 'z') && (a < 'A' || a > 'Z') && (a < 'А' || a > 'я') && a != 'Ё' && a != 'ё') // подумать над англ буквами
+                        if ((a < 'a' || a > 'z') && (a < 'A' || a > 'Z') && (a < 'А' || a > 'я') && a != 'Ё' && a != 'ё') 
                         {
-                            Console.WriteLine("В имени/названии содержатся специальные символы, цифры или пробел!");
-                            return false;
+                            return "В имени/названии содержатся специальные символы или цифры!";
                         }
                     }
-                    return true;
+                    return null;
                 case CheckMode.SpecChars:
                     foreach (char a in proverim)
                     {
-                        if ((a < 33 || a > 90) && (a < 97 || a > 122) && (a < 'А' || a > 'я') && a != 'Ё' && a != 'ё')
+                        if ((a < 33 || a > 64) && (a < 'a' || a > 'z') && (a < 'A' || a > 'Z') && (a < 'А' || a > 'я') && a != 'Ё' && a != 'ё')
                         {
-                            Console.WriteLine("В имени/названии содержатся недопустимые символы!");
-                            return false;
+                            return "В имени/названии содержатся недопустимые символы!";
                         }
                     }
-                    return true;
+                    return null;
                 default:
-                    Console.WriteLine("Ошибка в проверке, попробуйте еще раз");
-                    return false;
+                    return "Неизвестный режим проверки!";
             }   
         }
     }

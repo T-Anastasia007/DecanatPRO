@@ -10,6 +10,7 @@ namespace View
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("heloo");
         }
     }
 }
