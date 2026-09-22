@@ -12,12 +12,15 @@ namespace DecanatPRO
         public List<Student> students { get; set; } = new List<Student>();
 
         public void AddStudent(string name, string speciality, string group)
-        {   
-            students.Add(new Student(name, speciality, group));
-        }
-        public void DeleteStudent(int index)
         {
-            students.RemoveAt(index);      
+            Student newstud = new Student(name, speciality, group);
+            students.Add(newstud);
+            newstud.index = $"{students.Count}";
+        }
+        public void DeleteStudent(string indexx)
+        {
+            var x = students.Find(p => p.index == indexx);
+            students.Remove(x);
         }
         public List<Student> ShowTable() 
         {

@@ -11,7 +11,7 @@ namespace DecanatPRO
         public string Name { get; set; }
         public string Speciality { get; set; }
         public string Group { get; set; }
-        public int index;
+        public string index;
         public Student(string name, string speciality, string group)
         {
             Name = name;    
