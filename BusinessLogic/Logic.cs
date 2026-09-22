@@ -9,20 +9,21 @@ namespace DecanatPRO
 {
     public class Logic
     {
+        private int ID;
         public List<Student> students { get; set; } = new List<Student>();
 
         public void AddStudent(string name, string speciality, string group)
         {
             Student newstud = new Student(name, speciality, group);
             students.Add(newstud);
-            newstud.index = $"{students.Count}";
+            newstud.index = ID;
+            ID++;
         }
-        public void DeleteStudent(string indexx)
+        public void DeleteStudent(int indexx)
         {
-            var x = students.Find(p => p.index == indexx);
-            students.Remove(x);
+            students.RemoveAt(indexx);
         }
-        public List<Student> ShowTable() 
+        public List<Student> ShowTable()
         {
             //for (int i = 0; i < students.Count; i++)
             //{
@@ -49,7 +50,7 @@ namespace DecanatPRO
                 case CheckMode.Letters:
                     foreach (char a in proverim)
                     {
-                        if ((a < 'a' || a > 'z') && (a < 'A' || a > 'Z') && (a < 'А' || a > 'я') && a != 'Ё' && a != 'ё') 
+                        if ((a < 'a' || a > 'z') && (a < 'A' || a > 'Z') && (a < 'А' || a > 'я') && a != 'Ё' && a != 'ё')
                         {
                             return "В имени/названии содержатся специальные символы или цифры!";
                         }
@@ -66,7 +67,7 @@ namespace DecanatPRO
                     return null;
                 default:
                     return "Неизвестный режим проверки!";
-            }   
+            }
         }
     }
 }
