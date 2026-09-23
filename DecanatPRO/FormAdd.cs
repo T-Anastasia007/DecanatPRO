@@ -32,7 +32,6 @@ namespace DecanatPRO
             {
                 MessageBox.Show(errName, "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                textBoxName.Focus();
                 return;
             }
 
@@ -41,7 +40,6 @@ namespace DecanatPRO
             {
                 MessageBox.Show(errSpec, "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                textBoxSpec.Focus();
                 return;
             }
 
@@ -50,7 +48,6 @@ namespace DecanatPRO
             {
                 MessageBox.Show(errGroup, "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                textBoxGroup.Focus();
                 return;
             }
 

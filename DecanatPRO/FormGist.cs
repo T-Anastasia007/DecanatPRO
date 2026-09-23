@@ -18,7 +18,6 @@ namespace DecanatPRO
         {
             InitializeComponent();
             _logic = logic;
-            chart1.Palette = ChartColorPalette.Excel;
             chart1.Titles.Add("Кол-во студентов по настям");
             var hist = _logic.ShowHistogram();
             foreach (var a in hist)
@@ -32,11 +31,6 @@ namespace DecanatPRO
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
-        }
-
-        private void FormGist_Load(object sender, EventArgs e)
-        {
-           
         }
     }
 }

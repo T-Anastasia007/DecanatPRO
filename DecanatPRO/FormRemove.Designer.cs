@@ -33,13 +33,14 @@
             this.buttonRemove = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.textBoxIndex = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.ColumnID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnSpeciality = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnGroup = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -53,7 +54,8 @@
             this.tableLayoutPanel1.Controls.Add(this.buttonExit, 1, 8);
             this.tableLayoutPanel1.Controls.Add(this.buttonRemove, 1, 7);
             this.tableLayoutPanel1.Controls.Add(this.textBoxIndex, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridView1, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.dataGridView, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 1, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -114,56 +116,68 @@
             this.textBoxIndex.Size = new System.Drawing.Size(400, 43);
             this.textBoxIndex.TabIndex = 3;
             // 
-            // dataGridView1
+            // dataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnID,
             this.ColumnName,
             this.ColumnSpeciality,
             this.ColumnGroup});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(138, 213);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(400, 247);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(138, 213);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.ReadOnly = true;
+            this.dataGridView.RowHeadersWidth = 62;
+            this.dataGridView.RowTemplate.Height = 28;
+            this.dataGridView.Size = new System.Drawing.Size(400, 247);
+            this.dataGridView.TabIndex = 4;
             // 
             // ColumnID
             // 
+            this.ColumnID.FillWeight = 10F;
             this.ColumnID.HeaderText = "ID";
             this.ColumnID.MinimumWidth = 8;
             this.ColumnID.Name = "ColumnID";
             this.ColumnID.ReadOnly = true;
-            this.ColumnID.Width = 150;
             // 
             // ColumnName
             // 
+            this.ColumnName.FillWeight = 40F;
             this.ColumnName.HeaderText = "ФИО";
             this.ColumnName.MinimumWidth = 8;
             this.ColumnName.Name = "ColumnName";
             this.ColumnName.ReadOnly = true;
-            this.ColumnName.Width = 150;
             // 
             // ColumnSpeciality
             // 
+            this.ColumnSpeciality.FillWeight = 40F;
             this.ColumnSpeciality.HeaderText = "Специальность";
             this.ColumnSpeciality.MinimumWidth = 8;
             this.ColumnSpeciality.Name = "ColumnSpeciality";
             this.ColumnSpeciality.ReadOnly = true;
-            this.ColumnSpeciality.Width = 150;
             // 
             // ColumnGroup
             // 
+            this.ColumnGroup.FillWeight = 20F;
             this.ColumnGroup.HeaderText = "Группа";
             this.ColumnGroup.MinimumWidth = 8;
             this.ColumnGroup.Name = "ColumnGroup";
             this.ColumnGroup.ReadOnly = true;
-            this.ColumnGroup.Width = 150;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(138, 463);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(400, 42);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Введите ID студента";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // FormRemove
             // 
@@ -178,9 +192,10 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormRemove";
+            this.Load += new System.EventHandler(this.FormRemove_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,10 +207,11 @@
         private System.Windows.Forms.Button buttonRemove;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.TextBox textBoxIndex;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnID;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSpeciality;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnGroup;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -31,7 +31,7 @@ namespace DecanatPRO
 
             foreach (var row in _logic.ShowTable())
             {
-                dataGridView.Rows.Add(row);   // row — string[], грид раскидает по колонкам
+                dataGridView.Rows.Add(row);
             }
         }
     }

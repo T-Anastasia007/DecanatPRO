@@ -12,15 +12,26 @@ namespace DecanatPRO
 {
     public partial class FormRemove : Form
     {
+        private Logic _logic;
         public FormRemove(Logic logic)
         {
             InitializeComponent();
+            _logic = logic;
         }
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+        private void FormRemove_Load(object sender, EventArgs e)
+        {
+            dataGridView.Rows.Clear();
+
+            foreach (var row in _logic.ShowTable())
+            {
+                dataGridView.Rows.Add(row);
+            }
         }
     }
 }
