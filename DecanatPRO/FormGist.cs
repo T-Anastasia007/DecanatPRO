@@ -22,5 +22,10 @@ namespace DecanatPRO
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
+
+        private void FormGist_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

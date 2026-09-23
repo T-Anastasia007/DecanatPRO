@@ -92,6 +92,7 @@
             // 
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnNum,
@@ -109,35 +110,35 @@
             // 
             // ColumnNum
             // 
-            this.ColumnNum.HeaderText = "№";
+            this.ColumnNum.FillWeight = 10F;
+            this.ColumnNum.HeaderText = "ID";
             this.ColumnNum.MinimumWidth = 8;
             this.ColumnNum.Name = "ColumnNum";
             this.ColumnNum.ReadOnly = true;
-            this.ColumnNum.Width = 150;
             // 
             // ColumnName
             // 
+            this.ColumnName.FillWeight = 40F;
             this.ColumnName.HeaderText = "ФИО";
             this.ColumnName.MinimumWidth = 8;
             this.ColumnName.Name = "ColumnName";
             this.ColumnName.ReadOnly = true;
-            this.ColumnName.Width = 150;
             // 
             // ColumnSpeciality
             // 
+            this.ColumnSpeciality.FillWeight = 40F;
             this.ColumnSpeciality.HeaderText = "Специальность";
             this.ColumnSpeciality.MinimumWidth = 8;
             this.ColumnSpeciality.Name = "ColumnSpeciality";
             this.ColumnSpeciality.ReadOnly = true;
-            this.ColumnSpeciality.Width = 150;
             // 
             // ColumnGroup
             // 
+            this.ColumnGroup.FillWeight = 20F;
             this.ColumnGroup.HeaderText = "Группа";
             this.ColumnGroup.MinimumWidth = 8;
             this.ColumnGroup.Name = "ColumnGroup";
             this.ColumnGroup.ReadOnly = true;
-            this.ColumnGroup.Width = 150;
             // 
             // FormTable
             // 

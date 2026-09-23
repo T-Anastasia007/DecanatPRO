@@ -46,7 +46,7 @@ namespace DecanatPRO
             var table = new List<string[]>();
             foreach (var s in students)
             {
-                table.Add( new string[] { s.index.ToString(), s.Name, s.Group, s.Speciality});
+                table.Add( new string[] { s.index.ToString(), s.Name, s.Speciality, s.Group });
             }
             return table;
         }
