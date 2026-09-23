@@ -93,7 +93,7 @@ namespace DecanatPRO
                         {
                             Console.WriteLine("Введите группу: ");
                             _group = Console.ReadLine();
-                            if (l.CheckOnDurak( _group, CheckMode.SpecChars) != null)
+                            if (l.CheckOnDurak(_group, CheckMode.SpecChars) != null)
                             {
                                 Console.WriteLine(l.CheckOnDurak(_group, CheckMode.SpecChars));
                                 continue;
@@ -132,7 +132,7 @@ namespace DecanatPRO
                             if (otch == "X") { break; }
                             if (Int32.TryParse(otch, out del))
                             {
-                                l.DeleteStudent(del-1);
+                                l.DeleteStudent(del - 1);
                                 Console.WriteLine("Успешно!");
                                 break;
                             }
@@ -151,11 +151,12 @@ namespace DecanatPRO
                         var histo = l.ShowHistogram();
                         foreach (var i in histo)
                         {
-                            Console.WriteLine($"{i.Key}: ");
+                            Console.Write($"{i.Key}: ");
                             for (int j = 0; j < i.Value; j++)
                             {
                                 Console.Write("-");
                             }
+                            System.Console.WriteLine("");
                         }
                         break;
                     case 5:
