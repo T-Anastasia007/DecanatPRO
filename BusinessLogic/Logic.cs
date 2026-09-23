@@ -11,7 +11,7 @@ namespace DecanatPRO
 {
     public class Logic
     {
-        public new Dictionary<string, string> SpecGroup;
+        public Dictionary<string, string> SpecGroup { get; set; } = new Dictionary<string, string>();
         private int _id = 1;
         public List<Student> students { get; set; } = new List<Student>();
 
@@ -38,17 +38,19 @@ namespace DecanatPRO
         }
         public void DeleteStudent(int indexx)
         {
+
             students.RemoveAt(indexx);
         }
-        public List<Student> ShowTable()
+        public List<string> ShowTable()
         {
-            //for (int i = 0; i < students.Count; i++)
-            //{
-            //    Console.WriteLine($"{students[i].Name} | Специальность: {students[i].Speciality} Группа: {students[i].Group}");
-            //}
-            return students;
+            var table = new List<string>();
+            foreach (var s in students)
+            {
+                table.Add($"{s.index}. {s.Name} | {s.Group} | {s.Speciality}");
+            }
+            return table;
         }
-        public Dictionary<string, int> ShowGistogram()
+        public Dictionary<string, int> ShowHistogram()
         {
             var gistogram = students
                 .GroupBy(s => s.Speciality)
@@ -72,7 +74,7 @@ namespace DecanatPRO
                     {
                         if ((a < 'a' || a > 'z') && (a < 'A' || a > 'Z') && (a < 'А' || a > 'я') && a != 'Ё' && a != 'ё' && a != '-')
                         {
-                            return "В ФИО/названии содержатся специальные символы или цифры!";
+                            return "В ФИО/названии содержатся специальные символы, пробел или цифры!";
                         }
                     }
                     return null;
@@ -90,7 +92,7 @@ namespace DecanatPRO
                     {
                         if ((a < 'a' || a > 'z') && (a < 'A' || a > 'Z') && (a < 'А' || a > 'я') && a != 'Ё' && a != 'ё' && a != '-' && a != ' ')
                         {
-                            return "В ФИО/названии содержатся недопустимые символы!";
+                            return "Используйте буквы, а также (-)";
                         }
                     }
                     return null;

@@ -12,6 +12,14 @@ namespace DecanatPRO
         static void Main(string[] args)
         {
             Logic l = new Logic();
+            // === Тестовые студенты (заполняется автоматически при запуске) ===
+            l.AddStudent("Иванов Иван Иванович", "ПИ-21-1", "Прикладная информатика");
+            l.AddStudent("Петров Пётр Петрович", "ПИ-21-1", "Прикладная информатика");
+            l.AddStudent("Сидорова Анна Сергеевна", "ПИ-21-2", "Прикладная информатика");
+            l.AddStudent("Кузнецов Дмитрий Олегович", "ИС-22-1", "Информационные системы");
+            l.AddStudent("Смирнова Ольга Ивановна", "ИС-22-1", "Информационные системы");
+            l.AddStudent("Попов Алексей Николаевич", "МО-23-1", "Математическое обеспечение");
+            // ================================================================
             Random r = new Random();
             bool wle = true;
             while (wle)
@@ -111,16 +119,50 @@ namespace DecanatPRO
                         l.AddStudent(_name, _group, _spec);
                         break;
                     case 2:
-
+                        var _table = l.ShowTable();
+                        for (int i = 0; i < _table.Count; i++)
+                        {
+                            Console.WriteLine($"ID {_table[i]}");
+                        }
+                        Console.WriteLine("Введите ID того, кого хотите отчислить (ЕСЛИ НИКОГО, НАЖМИТЕ X)");
+                        int del = 0;
+                        while (true)
+                        {
+                            string otch = Console.ReadLine();
+                            if (otch == "X") { break; }
+                            if (Int32.TryParse(otch, out del))
+                            {
+                                l.DeleteStudent(del-1);
+                                Console.WriteLine("Успешно!");
+                                break;
+                            }
+                            Console.WriteLine("Вы ввели не цифры...");
+                        }
+                        Console.Clear();
                         break;
                     case 3:
-
+                        var _tablee = l.ShowTable();
+                        for (int i = 0; i < _tablee.Count; i++)
+                        {
+                            Console.WriteLine($"{_tablee[i]}");
+                        }
                         break;
                     case 4:
-
+                        var histo = l.ShowHistogram();
+                        foreach (var i in histo)
+                        {
+                            Console.WriteLine($"{i.Key}: ");
+                            for (int j = 0; j < i.Value; j++)
+                            {
+                                Console.Write("-");
+                            }
+                        }
                         break;
                     case 5:
                         wle = false;
+                        break;
+                    default:
+                        Console.WriteLine("Неккоретный ввод!");
                         break;
                 }
             }
