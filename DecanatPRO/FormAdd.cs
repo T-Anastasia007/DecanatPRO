@@ -25,37 +25,30 @@ namespace DecanatPRO
             string name = textBoxName.Text.Trim();
             string spec = textBoxSpec.Text.Trim();
             string group = textBoxGroup.Text.Trim();
-
-            // Проверки
-            string errName = _logic.CheckOnDurak(name, CheckMode.Specalnst);
-            if (errName != null)
+            string ename = _logic.CheckOnDurak(name, CheckMode.Letters);
+            if (ename != null)
             {
-                MessageBox.Show(errName, "Ошибка",
+                MessageBox.Show(ename, "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            string errSpec = _logic.CheckOnDurak(spec, CheckMode.Specalnst);
-            if (errSpec != null)
+            string espec = _logic.CheckOnDurak(spec, CheckMode.Specalnst);
+            if (espec != null)
             {
-                MessageBox.Show(errSpec, "Ошибка",
+                MessageBox.Show(espec, "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
-            string errGroup = _logic.CheckOnDurak(group, CheckMode.SpecChars);
-            if (errGroup != null)
+            string egroup = _logic.CheckOnDurak(group, CheckMode.SpecChars);
+            if (egroup != null)
             {
-                MessageBox.Show(errGroup, "Ошибка",
+                MessageBox.Show(egroup, "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-
             _logic.AddStudent(name, group, spec);
-
             MessageBox.Show("Студент добавлен!", "Успех",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
