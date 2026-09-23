@@ -122,7 +122,7 @@ namespace DecanatPRO
                         var _table = l.ShowTable();
                         foreach (var t in _table)
                         {
-                            Console.WriteLine($"ID {t[0]} | Имя: {t[1]} | Группа: {t[2]} | Специальность {t[3]}");
+                            Console.WriteLine($"ID {t[0]} | Имя: {t[1]} | Группа: {t[3]} | Специальность {t[2]}");
                         }
                         Console.WriteLine("Введите ID того, кого хотите отчислить (ЕСЛИ НИКОГО, НАЖМИТЕ X)");
                         int del = 0;
@@ -153,7 +153,7 @@ namespace DecanatPRO
                         Console.WriteLine("------------------------------------------------------------------------------------------------");
                         foreach (var t in _tablee)
                         {
-                            Console.WriteLine($"ID {t[0]} | Имя: {t[1]} | Группа: {t[2]} | Специальность {t[3]}");
+                            Console.WriteLine($"ID {t[0]} | Имя: {t[1]} | Группа: {t[3]} | Специальность {t[2]}");
                         }
                         Console.ReadLine();
                         Console.Clear();
