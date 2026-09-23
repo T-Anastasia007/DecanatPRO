@@ -41,12 +41,12 @@ namespace DecanatPRO
 
             students.RemoveAt(indexx);
         }
-        public List<string> ShowTable()
+        public List<string[]> ShowTable()
         {
-            var table = new List<string>();
+            var table = new List<string[]>();
             foreach (var s in students)
             {
-                table.Add($"{s.index}. {s.Name} | {s.Group} | {s.Speciality}");
+                table.Add( new string[] { s.index.ToString(), s.Name, s.Group, s.Speciality});
             }
             return table;
         }
