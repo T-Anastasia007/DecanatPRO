@@ -102,7 +102,7 @@
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(398, 77);
             this.labelName.TabIndex = 1;
-            this.labelName.Text = "Имя:";
+            this.labelName.Text = "ФИО";
             this.labelName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // labelSpec
@@ -170,7 +170,7 @@
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(400, 66);
             this.buttonSave.TabIndex = 7;
-            this.buttonSave.Text = "Сохранить";
+            this.buttonSave.Text = "Добавить";
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 

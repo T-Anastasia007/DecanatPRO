@@ -12,7 +12,7 @@ namespace DecanatPRO
 {
     public partial class FormRemove : Form
     {
-        public FormRemove()
+        public FormRemove(Logic logic)
         {
             InitializeComponent();
         }

@@ -12,27 +12,55 @@ namespace DecanatPRO
 {
     public partial class FormAdd : Form
     {
-        public FormAdd()
+        private Logic _logic;
+
+        public FormAdd(Logic logic)
         {
             InitializeComponent();
+            _logic = logic;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            try
-            {
-//                ParseDataFromTextBoxes();
+            string name = textBoxName.Text.Trim();
+            string spec = textBoxSpec.Text.Trim();
+            string group = textBoxGroup.Text.Trim();
 
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-            catch (Exception ex)
+            // Проверки
+            string errName = _logic.CheckOnDurak(name, CheckMode.Specalnst);
+            if (errName != null)
             {
-                MessageBox.Show("Ошибка: " + ex.Message,
-                              "Неверный формат",
-                              MessageBoxButtons.OK,
-                              MessageBoxIcon.Error);
+                MessageBox.Show(errName, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBoxName.Focus();
+                return;
             }
+
+            string errSpec = _logic.CheckOnDurak(spec, CheckMode.Specalnst);
+            if (errSpec != null)
+            {
+                MessageBox.Show(errSpec, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBoxSpec.Focus();
+                return;
+            }
+
+            string errGroup = _logic.CheckOnDurak(group, CheckMode.SpecChars);
+            if (errGroup != null)
+            {
+                MessageBox.Show(errGroup, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                textBoxGroup.Focus();
+                return;
+            }
+
+            _logic.AddStudent(name, group, spec);
+
+            MessageBox.Show("Студент добавлен!", "Успех",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)

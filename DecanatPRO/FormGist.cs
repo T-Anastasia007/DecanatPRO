@@ -12,7 +12,7 @@ namespace DecanatPRO
 {
     public partial class FormGist : Form
     {
-        public FormGist()
+        public FormGist(Logic logic)
         {
             InitializeComponent();
         }
