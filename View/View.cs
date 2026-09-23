@@ -120,16 +120,16 @@ namespace DecanatPRO
                         break;
                     case 2:
                         var _table = l.ShowTable();
-                        for (int i = 0; i < _table.Count; i++)
+                        foreach (var t in _table)
                         {
-                            Console.WriteLine($"ID {_table[i]}");
+                            Console.WriteLine($"ID {t[0]} | Имя: {t[1]} | Группа: {t[2]} | Специальность {t[3]}");
                         }
                         Console.WriteLine("Введите ID того, кого хотите отчислить (ЕСЛИ НИКОГО, НАЖМИТЕ X)");
                         int del = 0;
                         while (true)
                         {
                             string otch = Console.ReadLine();
-                            if (otch == "X") { break; }
+                            if (otch == "X") { Console.Clear(); break; }
                             if (Int32.TryParse(otch, out del))
                             {
                                 l.DeleteStudent(del - 1);
@@ -138,14 +138,19 @@ namespace DecanatPRO
                             }
                             Console.WriteLine("Вы ввели не цифры...");
                         }
+                        Console.ReadLine();
                         Console.Clear();
                         break;
                     case 3:
                         var _tablee = l.ShowTable();
-                        for (int i = 0; i < _tablee.Count; i++)
+                        Console.WriteLine("| ID |            Имя            |      Группа      |               Специальность               ");
+                        Console.WriteLine("------------------------------------------------------------------------------------------------");
+                        foreach (var t in _tablee)
                         {
-                            Console.WriteLine($"{_tablee[i]}");
+                            Console.WriteLine($"ID {t[0]} | Имя: {t[1]} | Группа: {t[2]} | Специальность {t[3]}");
                         }
+                        Console.ReadLine();
+                        Console.Clear();
                         break;
                     case 4:
                         var histo = l.ShowHistogram();
@@ -158,6 +163,8 @@ namespace DecanatPRO
                             }
                             System.Console.WriteLine("");
                         }
+                        Console.ReadLine();
+                        Console.Clear();
                         break;
                     case 5:
                         wle = false;
