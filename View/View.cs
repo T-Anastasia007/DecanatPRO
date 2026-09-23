@@ -132,8 +132,14 @@ namespace DecanatPRO
                             if (otch == "X") { Console.Clear(); break; }
                             if (Int32.TryParse(otch, out del))
                             {
-                                l.DeleteStudent(del - 1);
-                                Console.WriteLine("Успешно!");
+                                if (l.DeleteStudent(del))
+                                {
+                                    Console.WriteLine("Успешно!");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Студент с таким ID не найден :(");
+                                }
                                 break;
                             }
                             Console.WriteLine("Вы ввели не цифры...");

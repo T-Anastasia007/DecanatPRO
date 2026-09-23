@@ -36,10 +36,15 @@ namespace DecanatPRO
 
             //bool TryGetValue
         }
-        public void DeleteStudent(int indexx)
+        public bool DeleteStudent(int id)
         {
-
-            students.RemoveAt(indexx);
+            var stud = students.FirstOrDefault(s => s.index == id);
+            if (stud != null)
+            {
+                return false;
+            }
+            students.Remove(stud);
+            return true;
         }
         public List<string[]> ShowTable()
         {
