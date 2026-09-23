@@ -39,7 +39,7 @@ namespace DecanatPRO
         public bool DeleteStudent(int id)
         {
             var stud = students.FirstOrDefault(s => s.index == id);
-            if (stud != null)
+            if (stud == null)
             {
                 return false;
             }

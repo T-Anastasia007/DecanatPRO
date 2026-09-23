@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace DecanatPRO
 {
@@ -25,7 +26,7 @@ namespace DecanatPRO
             string name = textBoxName.Text.Trim();
             string spec = textBoxSpec.Text.Trim();
             string group = textBoxGroup.Text.Trim();
-            string ename = _logic.CheckOnDurak(name, CheckMode.Letters);
+            string ename = _logic.CheckOnDurak(name, CheckMode.SpecChars);
             if (ename != null)
             {
                 MessageBox.Show(ename, "Ошибка",

@@ -95,6 +95,7 @@
             this.buttonRemove.TabIndex = 1;
             this.buttonRemove.Text = "Удалить";
             this.buttonRemove.UseVisualStyleBackColor = false;
+            this.buttonRemove.Click += new System.EventHandler(this.buttonRemove_Click);
             // 
             // buttonExit
             // 
@@ -115,6 +116,7 @@
             this.textBoxIndex.Name = "textBoxIndex";
             this.textBoxIndex.Size = new System.Drawing.Size(400, 43);
             this.textBoxIndex.TabIndex = 3;
+            this.textBoxIndex.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxIndex_KeyPress);
             // 
             // dataGridView
             // 
