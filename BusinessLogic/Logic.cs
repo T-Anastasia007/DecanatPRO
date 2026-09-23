@@ -60,9 +60,9 @@ namespace DecanatPRO
         public string CheckOnDurak(string proverim, CheckMode checkmode)
         {
             //proverim = proverim.Trim(); добавить в main, как и s = иван | char.ToUpper(s[0]) + s.Substring(1); s = Иван
-            
-            //text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            
+
+            //text.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries); -убирает пробелы
+
             if (proverim == null || proverim.Length > 50 || proverim.Length < 2)
             {
                 return "Некорректная длина слова!";
@@ -74,7 +74,7 @@ namespace DecanatPRO
                     {
                         if ((a < 'a' || a > 'z') && (a < 'A' || a > 'Z') && (a < 'А' || a > 'я') && a != 'Ё' && a != 'ё' && a != '-')
                         {
-                            return "В ФИО используйте только буквы и (-), если нужно";
+                            return "Неверный ввод: в ФИО используйте только буквы и (-), если нужно";
                         }
                     }
                     return null;
@@ -83,7 +83,7 @@ namespace DecanatPRO
                     {
                         if ((a < 33 || a > 64) && (a < 'a' || a > 'z') && (a < 'A' || a > 'Z') && (a < 'А' || a > 'я') && a != 'Ё' && a != 'ё' && a != ' ')
                         {
-                            return "В названии группы содержатся недопустимые символы!";
+                            return "Неверный ввод: в названии группы содержатся недопустимые символы!";
                         }
                     }
                     return null;
@@ -92,7 +92,7 @@ namespace DecanatPRO
                     {
                         if ((a < 'a' || a > 'z') && (a < 'A' || a > 'Z') && (a < 'А' || a > 'я') && a != 'Ё' && a != 'ё' && a != '-' && a != ' ')
                         {
-                            return "Используйте буквы, а также (-)";
+                            return "Неверный ввод: используйте буквы, а также (-), если нужно";
                         }
                     }
                     return null;
