@@ -2,7 +2,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 namespace DecanatPRO
@@ -38,11 +40,11 @@ namespace DecanatPRO
                 Console.WriteLine("3. Показать таблицу");
                 Console.WriteLine("4. Показать гистаграмму");
                 Console.WriteLine("5. Выйти");
-                int swch = Int32.Parse(Console.ReadLine());
-                Console.Clear();
+                string swch = Console.ReadLine();
+                int arturpirojkov = 0;
                 switch (swch)
                 {
-                    case 1:
+                    case "1":
                         string _lastname = "";
                         string _firstname = "";
                         string _middlename = "";
@@ -118,7 +120,7 @@ namespace DecanatPRO
                         Console.WriteLine($"Добавлен {_name} | {_group} | {_spec}");
                         l.AddStudent(_name, _group, _spec);
                         break;
-                    case 2:
+                    case "2":
                         var _table = l.ShowTable();
                         foreach (var t in _table)
                         {
@@ -147,7 +149,7 @@ namespace DecanatPRO
                         Console.ReadLine();
                         Console.Clear();
                         break;
-                    case 3:
+                    case "3":
                         var _tablee = l.ShowTable();
                         Console.WriteLine("| ID |            Имя            |      Группа      |               Специальность               ");
                         Console.WriteLine("------------------------------------------------------------------------------------------------");
@@ -158,7 +160,7 @@ namespace DecanatPRO
                         Console.ReadLine();
                         Console.Clear();
                         break;
-                    case 4:
+                    case "4":
                         var histo = l.ShowHistogram();
                         foreach (var i in histo)
                         {
@@ -172,7 +174,7 @@ namespace DecanatPRO
                         Console.ReadLine();
                         Console.Clear();
                         break;
-                    case 5:
+                    case "5":
                         wle = false;
                         break;
                     default:

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,9 +25,11 @@ namespace DecanatPRO
         private void buttonSave_Click(object sender, EventArgs e)
         {
             string name = textBoxName.Text.Trim();
+            string _name = name.Replace(" ", "");
+
             string spec = textBoxSpec.Text.Trim();
             string group = textBoxGroup.Text.Trim();
-            string ename = _logic.CheckOnDurak(name, CheckMode.SpecChars);
+            string ename = _logic.CheckOnDurak(_name, CheckMode.Letters);
             if (ename != null)
             {
                 MessageBox.Show(ename, "Ошибка",
