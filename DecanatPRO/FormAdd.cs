@@ -26,7 +26,6 @@ namespace DecanatPRO
         {
             string name = textBoxName.Text.Trim();
             string _name = name.Replace(" ", "");
-
             string spec = textBoxSpec.Text.Trim();
             string group = textBoxGroup.Text.Trim();
             string ename = _logic.CheckOnDurak(_name, CheckMode.Letters);

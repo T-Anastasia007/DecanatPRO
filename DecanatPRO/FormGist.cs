@@ -18,7 +18,7 @@ namespace DecanatPRO
         {
             InitializeComponent();
             _logic = logic;
-            chart1.Titles.Add("Кол-во студентов по настям");
+            chart1.Titles.Add("Кол-во студентов по специальностям");
             var hist = _logic.ShowHistogram();
             foreach (var a in hist)
             {

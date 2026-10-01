@@ -44,9 +44,18 @@ namespace DecanatPRO
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            if (!int.TryParse(textBoxIndex.Text.Trim(), out int id))
+            if (dataGridView.CurrentRow == null)
             {
-                MessageBox.Show("Введите корректный ID (число).", "Ошибка",
+                MessageBox.Show("Сначала выберите студента в таблице.", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            string idText = dataGridView.CurrentRow.Cells[0].Value?.ToString();
+
+            if (!int.TryParse(idText, out int id))
+            {
+                MessageBox.Show("Не удалось прочитать ID выбранной строки.", "Ошибка",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
@@ -60,15 +69,12 @@ namespace DecanatPRO
                 return;
             }
 
-            // Обновить таблицу
             dataGridView.Rows.Clear();
             foreach (var row in _logic.ShowTable())
                 dataGridView.Rows.Add(row);
 
-            textBoxIndex.Clear();
             MessageBox.Show($"Студент с ID = {id} удалён.", "Успех",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-
     }
 }

@@ -10,10 +10,10 @@ using static System.Net.Mime.MediaTypeNames;
 namespace DecanatPRO
 {
     public class Logic
-    {
-        public Dictionary<string, string> SpecGroup { get; set; } = new Dictionary<string, string>();
+   {
+        private Dictionary<string, string> SpecGroup = new Dictionary<string, string>();
         private int _id = 1;
-        public List<Student> students { get; set; } = new List<Student>();
+        private List<Student> students = new List<Student>();
 
         public void AddStudent(string name, string group, string speciality)
         {
@@ -97,7 +97,7 @@ namespace DecanatPRO
                     {
                         if ((a < 'a' || a > 'z') && (a < 'A' || a > 'Z') && (a < 'А' || a > 'я') && a != 'Ё' && a != 'ё' && a != '-' && a != ' ')
                         {
-                            return "Неверный ввод: используйте буквы, а также (-), если нужно";
+                            return "Неверный ввод специальности: используйте буквы, а также (-), если нужно";
                         }
                     }
                     return null;
