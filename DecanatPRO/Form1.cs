@@ -22,28 +22,91 @@ namespace DecanatPRO
             logic.AddStudent("Шастун Антон Андреич", "ГФ3000", "Прикладная информатика");
         }
 
-        private void buttonAdd_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            FormAdd add = new FormAdd(logic);
-            add.ShowDialog();
-        }
+            dataGridView.Rows.Clear();
+
+            foreach (var row in logic.ShowTable())
+            {
+                dataGridView.Rows.Add(row);
+            }
+        } 
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            FormRemove remove = new FormRemove(logic);
-            remove.ShowDialog();
-        }
+            if (dataGridView.CurrentRow == null)
+            {
+                MessageBox.Show("Сначала выберите студента в таблице.", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
-        private void buttonTable_Click(object sender, EventArgs e)
-        {
-            FormTable table = new FormTable(logic);
-            table.ShowDialog();
+            string idText = dataGridView.CurrentRow.Cells[0].Value?.ToString();
+
+            if (!int.TryParse(idText, out int id))
+            {
+                MessageBox.Show("Не удалось прочитать ID выбранной строки.", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            bool ok = logic.DeleteStudent(id);
+
+            if (!ok)
+            {
+                MessageBox.Show($"Студент с ID = {id} не найден.", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            dataGridView.Rows.Clear();
+            foreach (var row in logic.ShowTable())
+                dataGridView.Rows.Add(row);
+
+            MessageBox.Show($"Студент с ID = {id} удалён.", "Успех",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void buttonGist_Click(object sender, EventArgs e)
         {
             FormGist gist = new FormGist(logic);
             gist.ShowDialog();
+        }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            string name = textBoxName.Text.Trim();
+            string _name = name.Replace(" ", "");
+            string spec = textBoxSpec.Text.Trim();
+            string group = textBoxGroup.Text.Trim();
+            string ename = logic.CheckOnDurak(_name, CheckMode.Letters);
+            if (ename != null)
+            {
+                MessageBox.Show(ename, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string espec = logic.CheckOnDurak(spec, CheckMode.Specalnst);
+            if (espec != null)
+            {
+                MessageBox.Show(espec, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string egroup = logic.CheckOnDurak(group, CheckMode.SpecChars);
+            if (egroup != null)
+            {
+                MessageBox.Show(egroup, "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            logic.AddStudent(name, group, spec);
+            MessageBox.Show("Студент добавлен!", "Успех",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            dataGridView.Rows.Clear();
+            foreach (var row in logic.ShowTable())
+                dataGridView.Rows.Add(row);
         }
     }
 }
