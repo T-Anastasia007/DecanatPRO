@@ -15,6 +15,12 @@ namespace DecanatPRO
         private int _id = 1;
         private List<Student> students = new List<Student>();
 
+        /// <summary>
+        /// Добавляет студентов
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="group"></param>
+        /// <param name="speciality"></param>
         public void AddStudent(string name, string group, string speciality)
         {
 
@@ -36,6 +42,11 @@ namespace DecanatPRO
 
             //bool TryGetValue
         }
+        /// <summary>
+        /// Удаляет студентов
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool DeleteStudent(int id)
         {
             var stud = students.FirstOrDefault(s => s.index == id);
@@ -46,6 +57,10 @@ namespace DecanatPRO
             students.Remove(stud);
             return true;
         }
+        /// <summary>
+        /// Формирует List с информацией о студентах
+        /// </summary>
+        /// <returns></returns>
         public List<string[]> ShowTable()
         {
             var table = new List<string[]>();
@@ -55,6 +70,10 @@ namespace DecanatPRO
             }
             return table;
         }
+        /// <summary>
+        /// Формирует словарь для составления гистограммы по специальностям
+        /// </summary>
+        /// <returns></returns>
         public Dictionary<string, int> ShowHistogram()
         {
             var gistogram = students
@@ -62,6 +81,14 @@ namespace DecanatPRO
                 .ToDictionary(k => k.Key, c => c.Count());
             return gistogram;
         }
+        /// <summary>
+        /// Проверяет вводимый текст
+        /// </summary>
+        /// <param name="proverim"></param>
+        /// <param name="checkmode"></param>
+        /// <returns>
+        /// В зависимости от ошибки возвращает соответвующий текст
+        /// </returns>
         public string CheckOnDurak(string proverim, CheckMode checkmode)
         {
             //proverim = proverim.Trim(); добавить в main, как и s = иван | char.ToUpper(s[0]) + s.Substring(1); s = Иван
