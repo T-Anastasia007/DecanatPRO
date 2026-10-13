@@ -21,6 +21,7 @@ namespace DecanatPRO
         /// <param name="name"></param>
         /// <param name="group"></param>
         /// <param name="speciality"></param>
+
         public void AddStudent(string name, string group, string speciality)
         {
 
@@ -37,7 +38,7 @@ namespace DecanatPRO
             }
             var newstud = new Student(name, speciality, group);
             students.Add(newstud);
-            newstud.index = _id;
+            newstud.Id = _id;
             _id++;
 
             //bool TryGetValue
@@ -49,7 +50,7 @@ namespace DecanatPRO
         /// <returns></returns>
         public bool DeleteStudent(int id)
         {
-            var stud = students.FirstOrDefault(s => s.index == id);
+            var stud = students.FirstOrDefault(s => s.Id == id);
             if (stud == null)
             {
                 return false;
@@ -66,7 +67,7 @@ namespace DecanatPRO
             var table = new List<string[]>();
             foreach (var s in students)
             {
-                table.Add( new string[] { s.index.ToString(), s.Name, s.Speciality, s.Group });
+                table.Add( new string[] { s.Id.ToString(), s.Name, s.Speciality, s.Group });
             }
             return table;
         }
