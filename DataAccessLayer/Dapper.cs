@@ -11,24 +11,17 @@ using System.Windows.Forms;
 /// </summary>
 namespace DecanatPRO
 {
-    public interface IRepository<T> where T : IDomainObject, new()
+    public class Dapper : IRepository<Student>
     {
-        void Create(T obj);
-        IEnumerable<T> ReadAll();
-        T ReadById(int id);
-        void Update(T obj);
-        void Delete(T obj);
-    }
-    public class DataAccessLayer : IRepository<Student>
-    {
-        private readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chunyai\OneDrive\Документы\GitHub\DecanatPRO\DataAccessLayer\Database1.mdf;Integrated Security=True";\
-
+        private readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chunyai\OneDrive\Документы\GitHub\DecanatPRO\DataAccessLayer\Database1.mdf;Integrated Security=True";
+        //поменять при работе
         public void Create(Student student)
         {
             using (IDbConnection db = new SqlConnection(connectionString))
             {
                 var sqlQuery = "INSERT INTO Students (Name, Speciality, [Group]) VALUES (@Name, @Speciality, @Group)";
                 db.Execute(sqlQuery, student);
+                
             }
         }
         public void Update(Student student) //по желанию

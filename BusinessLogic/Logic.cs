@@ -15,6 +15,7 @@ namespace DecanatPRO
         private int _id = 1;
         private List<Student> students = new List<Student>();
 
+
         /// <summary>
         /// Добавляет студентов
         /// </summary>
@@ -22,26 +23,36 @@ namespace DecanatPRO
         /// <param name="group"></param>
         /// <param name="speciality"></param>
 
+        //public void AddStudent(string name, string group, string speciality)
+        //{
+
+        //    if (!SpecGroup.ContainsKey(group))
+        //    {
+        //        SpecGroup.Add(group, speciality);
+        //    }
+        //    if (SpecGroup.TryGetValue(group, out string value))
+        //    {
+        //        if (value != speciality)
+        //        {
+        //            speciality = value;
+        //        }
+        //    }
+        //    var newstud = new Student(name, speciality, group);
+        //    students.Add(newstud);
+        //    newstud.Id = _id;
+        //    _id++;
+
+        //    //bool TryGetValue
+        //}
         public void AddStudent(string name, string group, string speciality)
         {
-
-            if (!SpecGroup.ContainsKey(group))
+            // специальность группы берём у уже существующих студентов этой группы
+            var sameGroup = _repo.ReadAll().FirstOrDefault(s => s.Group == group);
+            if (sameGroup != null)
             {
-                SpecGroup.Add(group, speciality);
+                speciality = sameGroup.Speciality;
             }
-            if (SpecGroup.TryGetValue(group, out string value))
-            {
-                if (value != speciality)
-                {
-                    speciality = value;
-                }
-            }
-            var newstud = new Student(name, speciality, group);
-            students.Add(newstud);
-            newstud.Id = _id;
-            _id++;
-
-            //bool TryGetValue
+            _repo.Create(new Student(name, speciality, group));
         }
         /// <summary>
         /// Удаляет студентов
