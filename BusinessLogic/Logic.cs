@@ -11,10 +11,15 @@ namespace DecanatPRO
 {
     public class Logic
    {
-        private Dictionary<string, string> SpecGroup = new Dictionary<string, string>();
-        private int _id = 1;
-        private List<Student> students = new List<Student>();
-
+        private IRepository<Student> repository;
+        public Logic()
+        {
+            repository = new Dapper();
+        }
+        //public Logic()
+        //{
+        //    repository = new EntityFramework(new DataContext());
+        //}
 
         /// <summary>
         /// Добавляет студентов
@@ -22,37 +27,14 @@ namespace DecanatPRO
         /// <param name="name"></param>
         /// <param name="group"></param>
         /// <param name="speciality"></param>
-
-        //public void AddStudent(string name, string group, string speciality)
-        //{
-
-        //    if (!SpecGroup.ContainsKey(group))
-        //    {
-        //        SpecGroup.Add(group, speciality);
-        //    }
-        //    if (SpecGroup.TryGetValue(group, out string value))
-        //    {
-        //        if (value != speciality)
-        //        {
-        //            speciality = value;
-        //        }
-        //    }
-        //    var newstud = new Student(name, speciality, group);
-        //    students.Add(newstud);
-        //    newstud.Id = _id;
-        //    _id++;
-
-        //    //bool TryGetValue
-        //}
         public void AddStudent(string name, string group, string speciality)
         {
-            // специальность группы берём у уже существующих студентов этой группы
-            var sameGroup = _repo.ReadAll().FirstOrDefault(s => s.Group == group);
+            var sameGroup = repository.ReadAll().FirstOrDefault(s => s.Group == group);
             if (sameGroup != null)
             {
                 speciality = sameGroup.Speciality;
             }
-            _repo.Create(new Student(name, speciality, group));
+            repository.Create(new Student(name, speciality, group));
         }
         /// <summary>
         /// Удаляет студентов
@@ -61,12 +43,11 @@ namespace DecanatPRO
         /// <returns></returns>
         public bool DeleteStudent(int id)
         {
-            var stud = students.FirstOrDefault(s => s.Id == id);
-            if (stud == null)
+            if (repository.ReadById(id) == null)
             {
                 return false;
             }
-            students.Remove(stud);
+            repository.Delete(repository.ReadById(id));
             return true;
         }
         /// <summary>
@@ -76,7 +57,7 @@ namespace DecanatPRO
         public List<string[]> ShowTable()
         {
             var table = new List<string[]>();
-            foreach (var s in students)
+            foreach (var s in repository.ReadAll())
             {
                 table.Add( new string[] { s.Id.ToString(), s.Name, s.Speciality, s.Group });
             }
@@ -88,7 +69,7 @@ namespace DecanatPRO
         /// <returns></returns>
         public Dictionary<string, int> ShowHistogram()
         {
-            var gistogram = students
+            var gistogram = repository.ReadAll()
                 .GroupBy(s => s.Speciality)
                 .ToDictionary(k => k.Key, c => c.Count());
             return gistogram;
