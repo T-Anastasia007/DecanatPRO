@@ -29,7 +29,6 @@ namespace DecanatPRO
                 Console.WriteLine("4. Показать гистаграмму");
                 Console.WriteLine("5. Выйти");
                 string swch = Console.ReadLine();
-                int arturpirojkov = 0;
                 switch (swch)
                 {
                     case "1":

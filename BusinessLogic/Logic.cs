@@ -14,6 +14,7 @@ namespace DecanatPRO
         private IRepository<Student> repository;
         public Logic()
         {
+            Db.
             repository = new Dapper();
         }
         //public Logic()
