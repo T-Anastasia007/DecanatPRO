@@ -178,7 +178,7 @@
             this.textBoxName.Location = new System.Drawing.Point(617, 240);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(439, 39);
+            this.textBoxName.Size = new System.Drawing.Size(439, 29);
             this.textBoxName.TabIndex = 8;
             // 
             // textBoxSpec
@@ -187,7 +187,7 @@
             this.textBoxSpec.Location = new System.Drawing.Point(617, 382);
             this.textBoxSpec.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSpec.Name = "textBoxSpec";
-            this.textBoxSpec.Size = new System.Drawing.Size(439, 39);
+            this.textBoxSpec.Size = new System.Drawing.Size(439, 29);
             this.textBoxSpec.TabIndex = 9;
             // 
             // textBoxGroup
@@ -196,7 +196,7 @@
             this.textBoxGroup.Location = new System.Drawing.Point(617, 524);
             this.textBoxGroup.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGroup.Name = "textBoxGroup";
-            this.textBoxGroup.Size = new System.Drawing.Size(439, 39);
+            this.textBoxGroup.Size = new System.Drawing.Size(439, 29);
             this.textBoxGroup.TabIndex = 10;
             // 
             // label5
@@ -204,10 +204,10 @@
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(59, 539);
+            this.label5.Location = new System.Drawing.Point(59, 573);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(439, 52);
+            this.label5.Size = new System.Drawing.Size(439, 18);
             this.label5.TabIndex = 11;
             this.label5.Text = "*Для удаления выберите студента в таблице";
             // 
@@ -280,11 +280,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 30F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1118, 791);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("Rodchenko", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -12,7 +12,9 @@ namespace DecanatPRO
     public class DataContext : DbContext
     {
         public DbSet<Student> Students { get; set; }
-        public DataContext() : base(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\labs\DecanatPRO\DataAccessLayer\Database1.mdf;Integrated Security=True")
-        {}
+        public DataContext() : base(Db.ConnectionString)
+        {
+            Database.SetInitializer<DataContext>(null);
+        }
     }
 }

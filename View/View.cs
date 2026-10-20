@@ -13,10 +13,7 @@ namespace DecanatPRO
     {
         static void Main(string[] args)
         {
-            Logic l = new Logic();
-            l.AddStudent("Иванов Иван Иванович", "ГФ21-1", "Прикладная информатика");
-            l.AddStudent("Петров Пётр Петрович", "ГФ25-2", "Прикладная информатика");
-            l.AddStudent("Крутой Чувак Очень", "ИК21-2", "Дизайн");
+            Logic l = new Logic(TypeofDB.Dapper);
             Random r = new Random();
             bool wle = true;
             while (wle)

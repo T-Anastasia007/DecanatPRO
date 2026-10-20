@@ -9,18 +9,39 @@ using System.Web;
 using static System.Net.Mime.MediaTypeNames;
 namespace DecanatPRO
 {
+    /// <summary>
+    /// Для выбора БД
+    /// </summary>
+    public enum TypeofDB
+    {
+        Dapper,
+        EF
+    }
     public class Logic
-   {
+    {
         private IRepository<Student> repository;
-        public Logic()
+        /// <summary>
+        /// Для использования логики во вью
+        /// </summary>
+        public Logic(TypeofDB type)
         {
-            Db.
-            repository = new Dapper();
+            Db.EnsureCreated();
+            switch (type)
+            {
+                case TypeofDB.Dapper:
+                    repository = new Dapper();
+                    break;
+                case TypeofDB.EF:
+                    repository = new EntityFramework(new DataContext());
+                    break;
+            }
+            if (!repository.ReadAll().Any())
+            {
+                AddStudent("Иванов Иван Иванович", "ГФ21-1", "Прикладная информатика");
+                AddStudent("Петров Пётр Петрович", "ГФ25-2", "Прикладная информатика");
+                AddStudent("Крутой Чувак Очень", "ИК21-2", "Дизайн");
+            }
         }
-        //public Logic()
-        //{
-        //    repository = new EntityFramework(new DataContext());
-        //}
 
         /// <summary>
         /// Добавляет студентов

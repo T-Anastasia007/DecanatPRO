@@ -12,25 +12,16 @@ namespace DecanatPRO
 {
     public partial class Form1 : Form
     {
-        private Logic logic = new Logic();
-        
+        private Logic logic = new Logic(TypeofDB.Dapper);
         public Form1()
         {
             InitializeComponent();
-            logic.AddStudent("Иванов Иван Иванович", "ГФ3000", "Прикладная информатика");
-            logic.AddStudent("Петров Пётр Петрович", "ГФ3000", "Прикладная информатика");
-            logic.AddStudent("Шастун Антон Андреич", "ГФ3000", "Прикладная информатика");
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView.Rows.Clear();
-
-            foreach (var row in logic.ShowTable())
-            {
-                dataGridView.Rows.Add(row);
-            }
-        } 
+            Refresh();
+        }
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
@@ -59,11 +50,9 @@ namespace DecanatPRO
                 return;
             }
 
-            dataGridView.Rows.Clear();
-            foreach (var row in logic.ShowTable())
-                dataGridView.Rows.Add(row);
+            Refresh();
 
-            MessageBox.Show($"Студент с ID = {id} удалён.", "Успех",
+        MessageBox.Show($"Студент с ID = {id} удалён.", "Успех",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -104,9 +93,16 @@ namespace DecanatPRO
             MessageBox.Show("Студент добавлен!", "Успех",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+            Refresh();
+        }
+        private void Refresh() 
+        {
             dataGridView.Rows.Clear();
+
             foreach (var row in logic.ShowTable())
+            {
                 dataGridView.Rows.Add(row);
+            }
         }
     }
 }

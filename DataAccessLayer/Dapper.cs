@@ -13,8 +13,7 @@ namespace DecanatPRO
 {
     public class Dapper : IRepository<Student>
     {
-        private string co
-        private readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\labs\DecanatPRO\DataAccessLayer\Database1.mdf;Integrated Security=True";
+        private readonly string connectionString = Db.ConnectionString;
         //поменять при работе
         public void Create(Student student)
         {
