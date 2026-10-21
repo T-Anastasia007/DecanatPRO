@@ -88,18 +88,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1118, 791);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(978, 742);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // buttonGist
             // 
             this.buttonGist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(188)))), ((int)(((byte)(168)))));
             this.buttonGist.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonGist.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGist.Location = new System.Drawing.Point(59, 674);
+            this.buttonGist.Font = new System.Drawing.Font("Rodchenko", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonGist.Location = new System.Drawing.Point(52, 628);
             this.buttonGist.Margin = new System.Windows.Forms.Padding(4);
             this.buttonGist.Name = "buttonGist";
-            this.buttonGist.Size = new System.Drawing.Size(439, 71);
+            this.buttonGist.Size = new System.Drawing.Size(383, 66);
             this.buttonGist.TabIndex = 3;
             this.buttonGist.Text = "Показать гистограмму";
             this.buttonGist.UseVisualStyleBackColor = false;
@@ -110,11 +110,11 @@
             this.label1.AutoSize = true;
             this.tableLayoutPanel1.SetColumnSpan(this.label1, 3);
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 39);
+            this.label1.Font = new System.Drawing.Font("Rodchenko", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(52, 37);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(997, 71);
+            this.label1.Size = new System.Drawing.Size(871, 66);
             this.label1.TabIndex = 4;
             this.label1.Text = "Деканат ПРО";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -123,11 +123,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(617, 165);
+            this.label2.Font = new System.Drawing.Font("Rodchenko", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(540, 154);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(439, 71);
+            this.label2.Size = new System.Drawing.Size(383, 66);
             this.label2.TabIndex = 5;
             this.label2.Text = "ФИО:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,11 +136,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(617, 307);
+            this.label3.Font = new System.Drawing.Font("Rodchenko", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(540, 286);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(439, 71);
+            this.label3.Size = new System.Drawing.Size(383, 66);
             this.label3.TabIndex = 6;
             this.label3.Text = "Специальность:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -149,11 +149,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(617, 449);
+            this.label4.Font = new System.Drawing.Font("Rodchenko", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(540, 418);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(439, 71);
+            this.label4.Size = new System.Drawing.Size(383, 66);
             this.label4.TabIndex = 7;
             this.label4.Text = "Группа:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -162,11 +162,11 @@
             // 
             this.buttonRemove.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(188)))), ((int)(((byte)(168)))));
             this.buttonRemove.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemove.Location = new System.Drawing.Point(59, 595);
+            this.buttonRemove.Font = new System.Drawing.Font("Rodchenko", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonRemove.Location = new System.Drawing.Point(52, 554);
             this.buttonRemove.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(439, 71);
+            this.buttonRemove.Size = new System.Drawing.Size(383, 66);
             this.buttonRemove.TabIndex = 1;
             this.buttonRemove.Text = "Удалить студента";
             this.buttonRemove.UseVisualStyleBackColor = false;
@@ -175,39 +175,39 @@
             // textBoxName
             // 
             this.textBoxName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxName.Location = new System.Drawing.Point(617, 240);
+            this.textBoxName.Location = new System.Drawing.Point(540, 224);
             this.textBoxName.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(439, 39);
+            this.textBoxName.Size = new System.Drawing.Size(383, 39);
             this.textBoxName.TabIndex = 8;
             // 
             // textBoxSpec
             // 
             this.textBoxSpec.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxSpec.Location = new System.Drawing.Point(617, 382);
+            this.textBoxSpec.Location = new System.Drawing.Point(540, 356);
             this.textBoxSpec.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSpec.Name = "textBoxSpec";
-            this.textBoxSpec.Size = new System.Drawing.Size(439, 39);
+            this.textBoxSpec.Size = new System.Drawing.Size(383, 39);
             this.textBoxSpec.TabIndex = 9;
             // 
             // textBoxGroup
             // 
             this.textBoxGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxGroup.Location = new System.Drawing.Point(617, 524);
+            this.textBoxGroup.Location = new System.Drawing.Point(540, 488);
             this.textBoxGroup.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxGroup.Name = "textBoxGroup";
-            this.textBoxGroup.Size = new System.Drawing.Size(439, 39);
+            this.textBoxGroup.Size = new System.Drawing.Size(383, 39);
             this.textBoxGroup.TabIndex = 10;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(59, 539);
+            this.label5.Font = new System.Drawing.Font("Rodchenko", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(52, 504);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(439, 52);
+            this.label5.Size = new System.Drawing.Size(383, 46);
             this.label5.TabIndex = 11;
             this.label5.Text = "*Для удаления выберите студента в таблице";
             // 
@@ -222,14 +222,14 @@
             this.ColumnSpeciality,
             this.ColumnGroup});
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(59, 169);
+            this.dataGridView.Location = new System.Drawing.Point(52, 158);
             this.dataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersWidth = 62;
             this.tableLayoutPanel1.SetRowSpan(this.dataGridView, 5);
             this.dataGridView.RowTemplate.Height = 28;
-            this.dataGridView.Size = new System.Drawing.Size(439, 347);
+            this.dataGridView.Size = new System.Drawing.Size(383, 322);
             this.dataGridView.TabIndex = 12;
             // 
             // ColumnID
@@ -268,11 +268,11 @@
             // 
             this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(188)))), ((int)(((byte)(168)))));
             this.buttonAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Location = new System.Drawing.Point(617, 674);
+            this.buttonAdd.Font = new System.Drawing.Font("Rodchenko", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd.Location = new System.Drawing.Point(540, 628);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(439, 71);
+            this.buttonAdd.Size = new System.Drawing.Size(383, 66);
             this.buttonAdd.TabIndex = 0;
             this.buttonAdd.Text = "Добавить студента";
             this.buttonAdd.UseVisualStyleBackColor = false;
@@ -280,11 +280,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1118, 791);
+            this.ClientSize = new System.Drawing.Size(978, 742);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Font = new System.Drawing.Font("Rodchenko", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

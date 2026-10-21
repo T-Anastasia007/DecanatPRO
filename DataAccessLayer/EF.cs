@@ -30,14 +30,14 @@ namespace DecanatPRO
             return _context.Students.Where(o => o.Id == id).FirstOrDefault();
         }
 
-        public void Update(Student obj)
-        {
-            Student origin = _context.Students.Where(o => o.Id == obj.Id).FirstOrDefault();
-            origin.Name = obj.Name;
-            origin.Speciality = obj.Speciality;
-            origin.Group = obj.Group;
-            _context.SaveChanges();
-        }
+        //public void Update(Student obj)
+        //{
+        //    Student origin = _context.Students.Where(o => o.Id == obj.Id).FirstOrDefault();
+        //    origin.Name = obj.Name;
+        //    origin.Speciality = obj.Speciality;
+        //    origin.Group = obj.Group;
+        //    _context.SaveChanges();
+        //}
 
         public void Delete(Student obj)
         {
