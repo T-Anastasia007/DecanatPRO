@@ -13,7 +13,7 @@ namespace DecanatPRO
 {
     public class Dapper : IRepository<Student>
     {
-        private readonly string connectionString = Db.ConnectionString;
+        private readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\labs\DecanatPRO\DataAccessLayer\Database2.mdf;Integrated Security=True";
         //поменять при работе
         public void Create(Student student)
         {
@@ -21,17 +21,16 @@ namespace DecanatPRO
             {
                 var sqlQuery = "INSERT INTO Students (Name, Speciality, [Group]) VALUES (@Name, @Speciality, @Group)";
                 db.Execute(sqlQuery, student);
-                
             }
         }
-        public void Update(Student student) //по желанию
-        {
-            using (IDbConnection db = new SqlConnection(connectionString))
-            {
-                var sqlQuery = "UPDATE Students SET Name = @Name, Speciality = @Speciality, [Group] = @Group WHERE Id = @Id";
-                db.Execute(sqlQuery, student);
-            }
-        }
+        //public void Update(Student student) //по желанию
+        //{
+        //    using (IDbConnection db = new SqlConnection(connectionString))
+        //    {
+        //        var sqlQuery = "UPDATE Students SET Name = @Name, Speciality = @Speciality, [Group] = @Group WHERE Id = @Id";
+        //        db.Execute(sqlQuery, student);
+        //    }
+        //}
         public IEnumerable<Student> ReadAll()
         {
             List<Student> students;

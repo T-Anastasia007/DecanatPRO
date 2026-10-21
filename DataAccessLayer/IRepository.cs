@@ -12,7 +12,7 @@ namespace DecanatPRO
         void Create(T obj);
         IEnumerable<T> ReadAll();
         T ReadById(int id);
-        void Update(T obj);
+        //void Update(T obj);
         void Delete(T obj);
     }
 }

@@ -13,7 +13,7 @@ namespace DecanatPRO
     {
         static void Main(string[] args)
         {
-            Logic l = new Logic(TypeofDB.Dapper);
+            Logic l = new Logic(TypeofDB.EF);
             Random r = new Random();
             bool wle = true;
             while (wle)

@@ -25,7 +25,6 @@ namespace DecanatPRO
         /// </summary>
         public Logic(TypeofDB type)
         {
-            Db.EnsureCreated();
             switch (type)
             {
                 case TypeofDB.Dapper:

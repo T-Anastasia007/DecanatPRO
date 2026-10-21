@@ -92,6 +92,9 @@ namespace DecanatPRO
             logic.AddStudent(name, group, spec);
             MessageBox.Show("Студент добавлен!", "Успех",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            textBoxName.Text = "";
+            textBoxSpec.Text = "";
+            textBoxGroup.Text = "";
 
             Refresh();
         }
