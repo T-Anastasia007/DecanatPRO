@@ -1,4 +1,5 @@
-﻿using Microsoft.SqlServer.Server;
+﻿using BusinessLogic;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using Ninject;
 
 namespace DecanatPRO
 {
@@ -14,7 +16,8 @@ namespace DecanatPRO
     {
         static void Main(string[] args)
         {
-            Logic l = new Logic(TypeofDB.EF);
+            IKernel ninjectKernel = new StandardKernel(new SimpleConfigModule());
+            Logic l = ninjectKernel.Get<Logic>();
             Random r = new Random();
             bool wle = true;
             while (wle)

@@ -11,31 +11,15 @@ using Model;
 
 namespace DecanatPRO
 {
-    /// <summary>
-    /// Для выбора БД
-    /// </summary>
-    public enum TypeofDB
-    {
-        Dapper,
-        EF
-    }
     public class Logic
     {
-        private IRepository<Student> repository;
+        private IRepository<Student> repository {  get; set; }
         /// <summary>
         /// Инициализация логики
         /// </summary>
-        public Logic(TypeofDB type)
+        public Logic(IRepository<Student> _repository)
         {
-            switch (type)
-            {
-                case TypeofDB.Dapper:
-                    repository = new Dapper();
-                    break;
-                case TypeofDB.EF:
-                    repository = new EntityFramework(new DataContext());
-                    break;
-            }
+            repository = _repository;
             if (!repository.ReadAll().Any())
             {
                 AddStudent("Иванов Иван Иванович", "ГФ21-1", "Прикладная информатика");

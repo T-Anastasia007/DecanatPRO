@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessLogic;
+using Ninject;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +14,7 @@ namespace DecanatPRO
 {
     public partial class Form1 : Form
     {
-        private Logic logic = new Logic(TypeofDB.Dapper);
+        private Logic logic = new StandardKernel(new SimpleConfigModule()).Get<Logic>();
         public Form1()
         {
             InitializeComponent();
