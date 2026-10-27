@@ -6,15 +6,14 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-/// <summary>
-/// Главная точка входа для приложения.
-/// </summary>
+using Model;
+
 namespace DecanatPRO
 {
     public class Dapper : IRepository<Student>
     {
         private readonly string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\labs\DecanatPRO\DataAccessLayer\Database2.mdf;Integrated Security=True";
-        //поменять при работе
+
         public void Create(Student student)
         {
             using (IDbConnection db = new SqlConnection(connectionString))

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
+using Model;
 
 namespace DecanatPRO
 {

@@ -7,6 +7,8 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
 using static System.Net.Mime.MediaTypeNames;
+using Model;
+
 namespace DecanatPRO
 {
     /// <summary>
@@ -21,7 +23,7 @@ namespace DecanatPRO
     {
         private IRepository<Student> repository;
         /// <summary>
-        /// Для использования логики во вью
+        /// Инициализация логики
         /// </summary>
         public Logic(TypeofDB type)
         {
@@ -148,6 +150,9 @@ namespace DecanatPRO
         }
     }
 }
+/// <summary>
+/// Режимы проверки слов в имени, группы и специальности
+/// </summary>
 public enum CheckMode
 {
     Letters,

@@ -5,12 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DecanatPRO
+namespace Model
 {
-    public interface IDomainObject
-    {
-        int Id { get; set; }
-    }
     public class Student : IDomainObject
     {
         public string Name { get; set; }
