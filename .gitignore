@@ -361,3 +361,14 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Сборка и настройки Visual Studio
+bin/
+obj/
+.vs/
+*.user
+packages/
+
+# Локальные базы данных (у каждого свои)
+*.mdf
+*.ldf
