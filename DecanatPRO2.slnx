@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="DecanatPRO2/View.csproj" />
+  <Project Path="Interfaces/Interfaces.csproj" />
+  <Project Path="Model/Model.csproj" />
+  <Project Path="Presenter/Presenter.csproj" />
+</Solution>
