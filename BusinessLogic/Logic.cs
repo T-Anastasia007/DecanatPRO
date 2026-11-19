@@ -13,7 +13,7 @@ namespace DecanatPRO
 {
     public class Logic
     {
-        private IRepository<Student> repository {  get; set; }
+        private IRepository<Student> repository { get; set; }
         /// <summary>
         /// Инициализация логики
         /// </summary>

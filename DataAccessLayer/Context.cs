@@ -15,7 +15,7 @@ namespace DecanatPRO
         public DbSet<Student> Students { get; set; }
         // Настя: @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\labs\DecanatPRO\DataAccessLayer\Database2.mdf;Integrated Security=True";
         // Матвей: @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chunyai\OneDrive\Документы\GitHub\DecanatPRO\DataAccessLayer\Database1.mdf;Integrated Security=True";
-        public DataContext() : base(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\chunyai\OneDrive\Документы\GitHub\DecanatPRO\DataAccessLayer\Database1.mdf;Integrated Security=True")
+        public DataContext() : base(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\labs\DecanatPRO\DataAccessLayer\Database2.mdf;Integrated Security=True")
         {
             Database.SetInitializer<DataContext>(null);
         }
